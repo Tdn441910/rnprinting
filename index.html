@@ -1,558 +1,154 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>RN Printing</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RN Printing | Professional Printing & Author Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root { --primary: #1e3a8a; --secondary: #25d366; --accent: #ef4444; --light: #f1f5f9; }
+        body { font-family: 'Poppins', sans-serif; margin: 0; background: #f8fafc; color: #333; scroll-behavior: smooth; }
+        
+        /* Header */
+        header { background: linear-gradient(135deg, #1e3a8a, #3b82f6); color: white; padding: 60px 20px; text-align: center; }
+        .shop-name { font-size: 3.5rem; font-weight: 700; margin: 0; text-transform: uppercase; }
+        .location-info { font-size: 1.2rem; margin-top: 10px; opacity: 0.9; }
 
-<style>
+        .container { max-width: 1200px; margin: auto; padding: 20px; }
 
-body{
-font-family:Arial;
-margin:0;
-background:#f4f4f4;
-}
+        /* Navigation Tabs */
+        .tabs { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin: 30px 0; }
+        .tab-btn { padding: 12px 25px; border: none; background: white; border-radius: 30px; cursor: pointer; font-weight: 600; box-shadow: 0 4px 6px rgba(0,0,0,0.05); transition: 0.3s; }
+        .tab-btn:hover, .tab-btn.active { background: var(--primary); color: white; }
 
-header{
-background:#b30000;
-color:white;
-padding:15px;
-text-align:center;
-font-size:28px;
-}
+        .tab-content { display: none; }
+        .tab-content.active { display: block; }
 
-section{
-background:white;
-margin:20px;
-padding:20px;
-border-radius:8px;
-}
+        /* Product Cards */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+        .card { background: white; border-radius: 15px; overflow: hidden; border: 1px solid #e2e8f0; transition: 0.3s; position: relative; }
+        .card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+        .card img { width: 100%; height: 180px; object-fit: cover; background: #eee; }
+        .card-body { padding: 20px; text-align: center; }
+        .price { font-size: 1.2rem; font-weight: 700; color: var(--accent); margin-bottom: 15px; display: block; }
 
-h2{
-color:#b30000;
-}
+        /* Table Styling */
+        .table-wrapper { overflow-x: auto; background: white; border-radius: 15px; padding: 10px; margin-top: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+        table { width: 100%; border-collapse: collapse; min-width: 600px; }
+        th, td { padding: 12px 15px; border-bottom: 1px solid #eee; text-align: left; font-size: 0.9rem; }
+        th { background: var(--primary); color: white; }
+        tr:hover { background: #f1f5f9; }
 
-table{
-width:100%;
-border-collapse:collapse;
-}
+        /* Buttons */
+        .btn-wa { background: var(--secondary); color: white; text-decoration: none; padding: 10px 20px; border-radius: 8px; font-weight: 600; display: inline-flex; align-items: center; gap: 8px; }
 
-th,td{
-border:1px solid #ccc;
-padding:8px;
-text-align:center;
-}
+        /* Author Section */
+        .author-section { background: #111; color: white; padding: 60px 40px; border-radius: 20px; margin: 60px 0; }
+        .book-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 30px; }
+        .book-card { background: #222; padding: 25px; border-radius: 15px; border-left: 5px solid var(--secondary); }
 
-th{
-background:#b30000;
-color:white;
-}
-
-.btn{
-background:#25D366;
-color:white;
-padding:6px 10px;
-text-decoration:none;
-border-radius:4px;
-}
-
-.gallery img{
-width:250px;
-margin:10px;
-border-radius:8px;
-}
-
-</style>
-
+        footer { text-align: center; padding: 50px; background: #000; color: #888; margin-top: 50px; }
+    </style>
 </head>
-
 <body>
 
 <header>
-RN PRINTING
+    <div class="shop-name">RN PRINTING</div>
+    <div class="location-info">Virli (Bu.), Ta. Lakhandur, Dist. Bhandara | Contact: 7798607130</div>
 </header>
 
-<section>
+<div class="container">
+    <div class="tabs">
+        <button class="tab-btn active" onclick="openTab(event, 'services')">Main Services</button>
+        <button class="tab-btn" onclick="openTab(event, 'letterheads')">Letterheads</button>
+        <button class="tab-btn" onclick="openTab(event, 'stickers')">Stickers</button>
+        <button class="tab-btn" onclick="openTab(event, 'posters')">Bulk Posters</button>
+    </div>
 
-<h2>Poster Price List</h2>
+    <div id="services" class="tab-content active">
+        <div class="grid">
+            <div class="card">
+                <img src="https://via.placeholder.com/400x300?text=Flex+Banner" alt="Banner">
+                <div class="card-body">
+                    <h3>Banner Printing</h3>
+                    <span class="price">Normal: ₹15 | Star: ₹20 /sq.ft</span>
+                    <a href="https://wa.me/917798607130?text=I want to order Banner Printing" class="btn-wa">Order on WhatsApp</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://via.placeholder.com/400x300?text=Visiting+Cards" alt="Visiting Cards">
+                <div class="card-body">
+                    <h3>Visiting Cards</h3>
+                    <span class="price">₹550 for 1000 Pcs</span>
+                    <a href="https://wa.me/917798607130?text=Order 1000 Visiting Cards" class="btn-wa">Order on WhatsApp</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://via.placeholder.com/400x300?text=Bill+Books" alt="Billbooks">
+                <div class="card-body">
+                    <h3>Bill Books</h3>
+                    <span class="price">A4 Size: Starting ₹1800</span>
+                    <a href="https://wa.me/917798607130?text=Enquiry for Bill Books" class="btn-wa">Order on WhatsApp</a>
+                </div>
+            </div>
+        </div>
+    </div>
 
-<table>
+    <div id="letterheads" class="tab-content">
+        <div class="table-wrapper">
+            <table>
+                <tr><th>Paper</th><th>GSM</th><th>Size</th><th>Qty</th><th>Rate</th><th>Action</th></tr>
+                <tr><td>Maplitho</td><td>80</td><td>8.5 x 11</td><td>1000</td><td>₹1600</td><td><a href="https://wa.me/917798607130?text=Order Letterhead Maplitho 80gsm 8.5x11" class="btn-wa">Order</a></td></tr>
+                <tr><td>Excel Bond JK</td><td>100</td><td>8.25 x 11.7</td><td>1000</td><td>₹3800</td><td><a href="https://wa.me/917798607130?text=Order Letterhead Excel Bond 100gsm" class="btn-wa">Order</a></td></tr>
+            </table>
+        </div>
+    </div>
 
-<tr>
-<th>Paper</th>
-<th>GSM</th>
-<th>Size</th>
-<th>Qty</th>
-<th>Rate</th>
-<th>Order</th>
-</tr>
+    <div id="stickers" class="tab-content">
+        <div class="table-wrapper">
+            <table>
+                <tr><th>Type</th><th>Size</th><th>Qty</th><th>Rate</th><th>Action</th></tr>
+                <tr><td>Sticker Chromo</td><td>3 x 2</td><td>1000</td><td>₹500</td><td><a href="https://wa.me/917798607130?text=Order Stickers 3x2" class="btn-wa">Order</a></td></tr>
+                <tr><td>Sticker Chromo</td><td>4 x 4</td><td>1000</td><td>₹1220</td><td><a href="https://wa.me/917798607130?text=Order Stickers 4x4" class="btn-wa">Order</a></td></tr>
+                <tr><td>Glossy Sticker</td><td>12 x 18</td><td>1000</td><td>₹14000</td><td><a href="https://wa.me/917798607130?text=Order Glossy Stickers 12x18" class="btn-wa">Order</a></td></tr>
+            </table>
+        </div>
+    </div>
 
-<tr>
-<td>Artpaper</td>
-<td>90</td>
-<td>15×20</td>
-<td>1000</td>
-<td>4400</td>
-<td>
-<a class="btn"
-href="https://wa.me/917798607130?text=Poster 15x20 Order">
-WhatsApp
-</a>
-</td>
-</tr>
-
-<tr>
-<td>Artpaper</td>
-<td>90</td>
-<td>18×23</td>
-<td>1000</td>
-<td>5050</td>
-<td>
-<a class="btn"
-href="https://wa.me/917798607130?text=Poster 18x23 Order">
-WhatsApp
-</a>
-</td>
-</tr>
-
-<tr>
-<td>Artpaper</td>
-<td>90</td>
-<td>20×29</td>
-<td>1000</td>
-<td>6800</td>
-<td>
-<a class="btn"
-href="https://wa.me/917798607130?text=Poster 20x29 Order">
-WhatsApp
-</a>
-</td>
-</tr>
-
-</table>
-
-</section>
-
-<section>
-
-<h2>Sticker Price List</h2>
-
-<table>
-
-<tr>
-<th>Size</th>
-<th>Qty</th>
-<th>Rate</th>
-<th>Order</th>
-</tr>
-
-<tr>
-<td>3×3</td>
-<td>1000</td>
-<td>700</td>
-<td>
-<a class="btn"
-href="https://wa.me/917798607130?text=Sticker 3x3 Order">
-WhatsApp
-</a>
-</td>
-</tr>
-
-<tr>
-<td>3×2</td>
-<td>1000</td>
-<td>500</td>
-<td>
-<a class="btn"
-href="https://wa.me/917798607130?text=Sticker 3x2 Order">
-WhatsApp
-</a>
-</td>
-</tr>
-
-<tr>
-<td>4×2</td>
-<td>1000</td>
-<td>620</td>
-<td>
-<a class="btn"
-href="https://wa.me/917798607130?text=Sticker 4x2 Order">
-WhatsApp
-</a>
-</td>
-</tr>
-
-<tr>
-<td>6×4</td>
-<td>1000</td>
-<td>1360</td>
-<td>
-<a class="btn"
-href="https://wa.me/917798607130?text=Sticker 6x4 Order">
-WhatsApp
-</a>
-</td>
-</tr>
-
-</table>
-
-</section>
-
-<section>
-
-<h2>My Book</h2>
-
-<img src="shabri.jpg" width="200">
-
-<p>
-शबरी : आयुष्याचा प्रवास<br>
-लेखक – तुषार दिलीप नखाते
-</p>
-
-</section>
-
-<section>
-
-<h2>Gallery</h2>
-
-<div class="gallery">
-
-<img src="shop.jpg">
-<img src="printing.jpg">
-<img src="banner.jpg">
-
+    <div class="author-section">
+        <h2 style="font-size: 2.5rem; text-align: center; color: var(--secondary);">Literary Works by Tushar Nakhate</h2>
+        <div class="book-grid">
+            <div class="book-card">
+                <h3>Shabari: Ayushyacha Pravas</h3>
+                <p>Status: <b>Published</b></p>
+                <p>A mesmerizing journey of life through soulful words. Available for purchase now.</p>
+                <a href="https://wa.me/917798607130?text=I want to buy Shabari book" class="btn-wa">Buy My Book</a>
+            </div>
+            <div class="book-card">
+                <h3>Antim Satya</h3>
+                <p>Status: <span style="color: #fbbf24;"><b>Currently Writing</b></span></p>
+                <p>An upcoming masterpiece exploring the ultimate truths of existence. Coming soon!</p>
+            </div>
+        </div>
+    </div>
 </div>
 
-</section>
+<footer>
+    <p><b>RN PRINTING & PUBLICATIONS</b><br>Virli (Bu.), Lakhandur, Bhandara | Phone: 7798607130</p>
+    <p>&copy; 2026 Crafted for Professional Excellence.</p>
+</footer>
 
-<section>
-
-<h2>Contact</h2>
-
-<p>
-RN Printing<br>
-Virli (Bu.), Tal. Lakhandur<br>
-Dist. Bhandara<br>
-Phone: 7798607130
-</p>
-
-<iframe
-src="https://maps.google.com/maps?q=bhandara%20maharashtra&t=&z=13&ie=UTF8&iwloc=&output=embed"
-width="100%"
-height="300">
-</iframe>
-
-</section>
+<script>
+    function openTab(evt, tabName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tab-content");
+        for (i = 0; i < tabcontent.length; i++) { tabcontent[i].style.display = "none"; }
+        tablinks = document.getElementsByClassName("tab-btn");
+        for (i = 0; i < tablinks.length; i++) { tablinks[i].className = tablinks[i].className.replace(" active", ""); }
+        document.getElementById(tabName).style.display = "block";
+        evt.currentTarget.className += " active";
+    }
+</script>
 
 </body>
 </html>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>RN Printing</title>
-
-<style>
-
-body{
-font-family:Arial;
-margin:0;
-background:#f4f4f4;
-}
-
-header{
-background:#b30000;
-color:white;
-padding:15px;
-text-align:center;
-font-size:28px;
-}
-
-section{
-background:white;
-margin:20px;
-padding:20px;
-border-radius:8px;
-}
-
-h2{
-color:#b30000;
-}
-
-table{
-width:100%;
-border-collapse:collapse;
-}
-
-th,td{
-border:1px solid #ccc;
-padding:8px;
-text-align:center;
-}
-
-th{
-background:#b30000;
-color:white;
-}
-
-.btn{
-background:#25D366;
-color:white;
-padding:6px 10px;
-text-decoration:none;
-border-radius:4px;
-}
-
-.gallery img{
-width:250px;
-margin:10px;
-border-radius:8px;
-}
-
-</style>
-
-</head>
-
-<body>
-
-<header>
-RN PRINTING
-</header>
-
-<section>
-
-<h2>Poster Price List</h2>
-
-<table>
-
-<tr>
-<th>Paper</th>
-<th>GSM</th>
-<th>Size</th>
-<th>Qty</th>
-<th>Rate</th>
-<th>Order</th>
-</tr>
-
-<tr>
-<td>Artpaper</td>
-<td>90</td>
-<td>15×20</td>
-<td>1000</td>
-<td>4400</td>
-<td>
-<a class="btn"
-href="https://wa.me/917798607130?text=Poster 15x20 Order">
-WhatsApp
-</a>
-</td>
-</tr>
-
-<tr>
-<td>Artpaper</td>
-<td>90</td>
-<td>18×23</td>
-<td>1000</td>
-<td>5050</td>
-<td>
-<a class="btn"
-href="https://wa.me/917798607130?text=Poster 18x23 Order">
-WhatsApp
-</a>
-</td>
-</tr>
-
-<tr>
-<td>Artpaper</td>
-<td>90</td>
-<td>20×29</td>
-<td>1000</td>
-<td>6800</td>
-<td>
-<a class="btn"
-href="https://wa.me/917798607130?text=Poster 20x29 Order">
-WhatsApp
-</a>
-</td>
-</tr>
-
-</table>
-
-</section>
-
-<section>
-
-<h2>Sticker Price List</h2>
-
-<table>
-
-<tr>
-<th>Size</th>
-<th>Qty</th>
-<th>Rate</th>
-<th>Order</th>
-</tr>
-
-<tr>
-<td>3×3</td>
-<td>1000</td>
-<td>700</td>
-<td>
-<a class="btn"
-href="https://wa.me/917798607130?text=Sticker 3x3 Order">
-WhatsApp
-</a>
-</td>
-</tr>
-
-<tr>
-<td>3×2</td>
-<td>1000</td>
-<td>500</td>
-<td>
-<a class="btn"
-href="https://wa.me/917798607130?text=Sticker 3x2 Order">
-WhatsApp
-</a>
-</td>
-</tr>
-
-<tr>
-<td>4×2</td>
-<td>1000</td>
-<td>620</td>
-<td>
-<a class="btn"
-href="https://wa.me/917798607130?text=Sticker 4x2 Order">
-WhatsApp
-</a>
-</td>
-</tr>
-
-<tr>
-<td>6×4</td>
-<td>1000</td>
-<td>1360</td>
-<td>
-<a class="btn"
-href="https://wa.me/917798607130?text=Sticker 6x4 Order">
-WhatsApp
-</a>
-</td>
-</tr>
-
-</table>
-
-</section>
-
-<section>
-
-<h2>My Book</h2>
-
-<img src="shabri.jpg" width="200">
-
-<p>
-शबरी : आयुष्याचा प्रवास<br>
-लेखक – तुषार दिलीप नखाते
-</p>
-
-</section>
-
-<section>
-
-<h2>Gallery</h2>
-
-<div class="gallery">
-
-<img src="shop.jpg">
-<img src="printing.jpg">
-<img src="banner.jpg">
-
-</div>
-
-</section>
-
-<section>
-
-<h2>Contact</h2>
-
-<p>
-RN Printing<br>
-Virli (Bu.), Tal. Lakhandur<br>
-Dist. Bhandara<br>
-Phone: 7798607130
-</p>
-
-<iframe
-src="https://maps.google.com/maps?q=bhandara%20maharashtra&t=&z=13&ie=UTF8&iwloc=&output=embed"
-width="100%"
-height="300">
-</iframe>
-
-</section>
-
-</body>
-<section>
-
-<h2>Sticker Price List</h2>
-
-<table>
-
-<tr>
-<th>Size</th>
-<th>Qty</th>
-<th>Rate</th>
-<th>Order</th>
-</tr>
-
-<tr>
-<td>3×3</td>
-<td>1000</td>
-<td>700</td>
-<td><a class="btn" href="https://wa.me/917798607130?text=Sticker 3x3 Order">WhatsApp</a></td>
-</tr>
-
-<tr>
-<td>3×2</td>
-<td>1000</td>
-<td>500</td>
-<td><a class="btn" href="https://wa.me/917798607130?text=Sticker 3x2 Order">WhatsApp</a></td>
-</tr>
-
-<tr>
-<td>4×2</td>
-<td>1000</td>
-<td>620</td>
-<td><a class="btn" href="https://wa.me/917798607130?text=Sticker 4x2 Order">WhatsApp</a></td>
-</tr>
-
-<tr>
-<td>4×4</td>
-<td>1000</td>
-<td>1220</td>
-<td><a class="btn" href="https://wa.me/917798607130?text=Sticker 4x4 Order">WhatsApp</a></td>
-</tr>
-
-<tr>
-<td>5×4</td>
-<td>1000</td>
-<td>1520</td>
-<td><a class="btn" href="https://wa.me/917798607130?text=Sticker 5x4 Order">WhatsApp</a></td>
-</tr>
-
-<tr>
-<td>6×4</td>
-<td>1000</td>
-<td>1360</td>
-<td><a class="btn" href="https://wa.me/917798607130?text=Sticker 6x4 Order">WhatsApp</a></td>
-</tr>
-
-<tr>
-<td>7×5</td>
-<td>1000</td>
-<td>1960</td>
-<td><a class="btn" href="https://wa.me/917798607130?text=Sticker 7x5 Order">WhatsApp</a></td>
-</tr>
-
-</table>
-
-</section>
