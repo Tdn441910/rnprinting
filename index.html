@@ -1,77 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="mr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>RN Printing</title>
+<title>RN Printing | Virli (Bu.)</title>
 
 <style>
+body{font-family:Arial,Helvetica,sans-serif;margin:0;background:#f2f4f7;color:#222}
+header{background:#b30000;color:white;padding:15px 30px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-size:28px;font-weight:bold}
+nav a{color:white;margin:0 12px;text-decoration:none;font-weight:bold}
+nav a:hover{color:#ffd700}
 
-body{
-font-family:Arial;
-margin:0;
-background:#f4f4f4;
-}
+.hero{background:url("https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc");background-size:cover;background-position:center;height:380px;display:flex;align-items:center;justify-content:center;color:white;font-size:42px;font-weight:bold;text-shadow:2px 2px 8px black}
 
-header{
-background:#b30000;
-color:white;
-padding:15px;
-display:flex;
-align-items:center;
-justify-content:space-between;
-}
+section{max-width:1200px;margin:auto;background:white;margin-top:25px;padding:35px;border-radius:10px;box-shadow:0 6px 14px rgba(0,0,0,0.08)}
 
-.logo{
-font-size:28px;
-font-weight:bold;
-}
+h2{color:#b30000;margin-top:0}
 
-nav a{
-color:white;
-margin:10px;
-text-decoration:none;
-font-weight:bold;
-}
+.services{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:15px}
+.service{background:#fafafa;border:1px solid #eee;padding:15px;border-radius:8px;font-weight:bold;text-align:center}
 
-.hero{
-background:url("https://images.unsplash.com/photo-1581093458791-9d42d1dbe7d5");
-background-size:cover;
-height:350px;
-display:flex;
-align-items:center;
-justify-content:center;
-color:white;
-font-size:40px;
-font-weight:bold;
-}
+.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:15px}
+.gallery img{width:100%;border-radius:8px}
 
-section{
-padding:30px;
-text-align:center;
-}
+.book{display:flex;gap:25px;flex-wrap:wrap;align-items:center}
+.book img{width:200px;border-radius:8px}
 
-.gallery img{
-width:300px;
-margin:10px;
-border-radius:10px;
-}
+.pricebox{background:#fafafa;border:1px solid #ddd;border-radius:8px;padding:15px;margin:10px 0}
 
-.price{
-background:white;
-padding:20px;
-margin:10px;
-display:inline-block;
-border-radius:10px;
-box-shadow:0 0 10px rgba(0,0,0,0.1);
-}
+.pricebox h3{margin-top:0}
 
-footer{
-background:#222;
-color:white;
-padding:20px;
-text-align:center;
-}
+.table{overflow-x:auto}
+
+table{width:100%;border-collapse:collapse}
+th,td{border:1px solid #ddd;padding:8px;text-align:center}
+th{background:#b30000;color:white}
+
+footer{background:#222;color:white;text-align:center;padding:20px;margin-top:40px}
 
 </style>
 </head>
@@ -79,85 +45,238 @@ text-align:center;
 <body>
 
 <header>
-
 <div class="logo">RN Printing</div>
-
 <nav>
-<a href="#">Home</a>
-<a href="#">Services</a>
-<a href="#">Books</a>
-<a href="#">Price</a>
-<a href="#">Contact</a>
+<a href="#home">Home</a>
+<a href="#services">Services</a>
+<a href="#price">Price List</a>
+<a href="#books">Books</a>
+<a href="#contact">Contact</a>
 </nav>
-
 </header>
 
 <div class="hero">
-Best Printing Services
+Professional Printing Services
 </div>
 
-<section>
+<section id="services">
+<h2>Printing Work Services</h2>
 
-<h2>Our Printing Work</h2>
+<div class="services">
+<div class="service">Banner Print</div>
+<div class="service">Screen Print</div>
+<div class="service">Multicolor Print</div>
+<div class="service">Calendar Print</div>
+<div class="service">Bag Print</div>
+<div class="service">ID Card Print</div>
+<div class="service">Photo Print</div>
+<div class="service">Bill Book</div>
+<div class="service">Visiting Card</div>
+<div class="service">Poster / Pamphlet</div>
+</div>
+</section>
+
+<section>
+<h2>Printing Work Gallery</h2>
 
 <div class="gallery">
-
 <img src="https://images.unsplash.com/photo-1562577309-2592ab84b1bc">
-
+<img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc">
 <img src="https://images.unsplash.com/photo-1581093588401-22a7c0a8b02b">
+<img src="https://images.unsplash.com/photo-1581091012184-7e0cdfbb6795">
+</div>
 
-<img src="https://images.unsplash.com/photo-1581093588401-22a7c0a8b02b">
+</section>
+
+<section id="price">
+<h2>Printing Price List</h2>
+
+<div class="pricebox">
+<h3>Banner Print</h3>
+<p>Star Banner – ₹20 sq.ft</p>
+<p>Simple Banner – ₹15 sq.ft</p>
+</div>
+
+<div class="pricebox">
+<h3>Screen Print</h3>
+<p>₹1.5 per print (पत्रिका)</p>
+</div>
+
+<div class="pricebox">
+<h3>Multicolor Print</h3>
+<p>A4 Size – ₹10</p>
+<p>A3 Single – ₹80</p>
+<p>100 Prints – ₹15</p>
+<p>12×18 Single – ₹100</p>
+<p>100 Prints – ₹18</p>
+<p>500 Prints – ₹12</p>
+<p>1000 Prints – ₹6</p>
+</div>
+
+<div class="pricebox">
+<h3>Calendar Print</h3>
+<p>11×17 Size | 6 Page | Single Color – ₹14</p>
+</div>
+
+<div class="pricebox">
+<h3>Bag Print</h3>
+<p>12×16 (80gsm) – ₹15</p>
+<p>12×18 – ₹16</p>
+</div>
+
+<div class="pricebox">
+<h3>ID Card Print</h3>
+<p>1 नग – ₹100</p>
+<p>100 नग – ₹50 प्रति</p>
+</div>
+
+<div class="pricebox">
+<h3>Photo Print</h3>
+<p>8×12 – ₹600</p>
+<p>12×18 – ₹1000</p>
+<p>16×20 – ₹1500</p>
+<p>16×24 – ₹2300</p>
+<p>20×24 – ₹2200</p>
+<p>20×30 – ₹2600</p>
+</div>
+
+<div class="pricebox">
+<h3>Bill Book</h3>
+<p>8.5×5.5 – 6 नग ₹1080</p>
+<p>10 नग ₹1700</p>
+<p>A4 Size – 6 नग ₹1800</p>
+<p>10 नग ₹2500</p>
+</div>
+
+<div class="pricebox">
+<h3>Visiting Card</h3>
+<p>1000 नग – ₹550</p>
+</div>
+
+</section>
+
+<section>
+<h2>Poster Printing Price</h2>
+
+<div class="table">
+
+<table>
+<tr>
+<th>Paper</th>
+<th>GSM</th>
+<th>Size</th>
+<th>Qty</th>
+<th>Rate</th>
+</tr>
+
+<tr><td>Artpaper</td><td>90</td><td>15×20</td><td>1000</td><td>4400</td></tr>
+<tr><td>Artpaper</td><td>90</td><td>18×23</td><td>1000</td><td>5050</td></tr>
+<tr><td>Artpaper</td><td>90</td><td>20×29</td><td>1000</td><td>6800</td></tr>
+<tr><td>Artpaper</td><td>130</td><td>15×20</td><td>1000</td><td>5000</td></tr>
+<tr><td>Artpaper</td><td>130</td><td>18×23</td><td>1000</td><td>6050</td></tr>
+<tr><td>Maplitho</td><td>80</td><td>15×20</td><td>1000</td><td>4200</td></tr>
+<tr><td>Maplitho</td><td>80</td><td>18×23</td><td>1000</td><td>4750</td></tr>
+<tr><td>Maplitho</td><td>80</td><td>20×29</td><td>1000</td><td>6400</td></tr>
+</table>
 
 </div>
 
 </section>
 
 <section>
+<h2>Letterhead Printing Price</h2>
+<div class="table">
+<table>
+<tr><th>Paper</th><th>GSM</th><th>Size</th><th>Qty</th><th>Rate</th></tr>
+<tr><td>Maplitho</td><td>80</td><td>8.5×11</td><td>1000</td><td>1600</td></tr>
+<tr><td>Maplitho</td><td>80</td><td>8.5×11.3</td><td>1000</td><td>1800</td></tr>
+<tr><td>Maplitho</td><td>80</td><td>8.25×11.7</td><td>1000</td><td>2000</td></tr>
+<tr><td>Maplitho</td><td>80</td><td>8.5×5.5</td><td>1000</td><td>800</td></tr>
+<tr><td>Maplitho</td><td>100</td><td>8.5×11</td><td>1000</td><td>2100</td></tr>
+<tr><td>Maplitho</td><td>100</td><td>8.5×11.3</td><td>1000</td><td>2300</td></tr>
+<tr><td>Maplitho</td><td>100</td><td>8.25×11.7</td><td>1000</td><td>2400</td></tr>
+<tr><td>Maplitho</td><td>100</td><td>8.5×5.5</td><td>1000</td><td>1000</td></tr>
+<tr><td>Maplitho</td><td>80</td><td>7×9.5</td><td>1000</td><td>1650</td></tr>
+<tr><td>Maplitho</td><td>100</td><td>7×9.5</td><td>1000</td><td>1800</td></tr>
+<tr><td>Maplitho</td><td>80</td><td>9×14</td><td>1000</td><td>3000</td></tr>
+<tr><td>Maplitho</td><td>100</td><td>9×14</td><td>1000</td><td>3400</td></tr>
+<tr><td>Maplitho</td><td>80</td><td>8.5×13.5</td><td>1000</td><td>3000</td></tr>
+<tr><td>Maplitho</td><td>100</td><td>8.5×13.5</td><td>1000</td><td>3400</td></tr>
+<tr><td>Excel Bond JK</td><td>80</td><td>8.5×11</td><td>1000</td><td>2600</td></tr>
+<tr><td>Excel Bond JK</td><td>80</td><td>8.5×11.3</td><td>1000</td><td>2800</td></tr>
+<tr><td>Excel Bond JK</td><td>80</td><td>8.25×11.7</td><td>1000</td><td>3300</td></tr>
+<tr><td>Excel Bond JK</td><td>100</td><td>8.5×11</td><td>1000</td><td>2800</td></tr>
+<tr><td>Excel Bond JK</td><td>100</td><td>8.5×11.3</td><td>1000</td><td>2900</td></tr>
+<tr><td>Excel Bond JK</td><td>100</td><td>8.25×11.7</td><td>1000</td><td>3800</td></tr>
+</table>
+</div>
+</section>
 
+<section>
+<h2>Sticker Printing Price</h2>
+<div class="table">
+<table>
+<tr><th>Paper</th><th>GSM</th><th>Size</th><th>Qty</th><th>Rate</th></tr>
+<tr><td>Sticker Chromo</td><td>210</td><td>6×4</td><td>1000</td><td>1360</td></tr>
+<tr><td>Sticker Chromo</td><td>210</td><td>7×4</td><td>1000</td><td>1580</td></tr>
+<tr><td>Sticker Chromo</td><td>210</td><td>7×5</td><td>1000</td><td>1960</td></tr>
+<tr><td>Sticker Chromo</td><td>210</td><td>8×5</td><td>1000</td><td>2240</td></tr>
+<tr><td>Sticker Chromo</td><td>210</td><td>9×4</td><td>1000</td><td>2020</td></tr>
+<tr><td>Sticker Chromo</td><td>210</td><td>9×5</td><td>1000</td><td>2520</td></tr>
+<tr><td>Sticker Chromo</td><td>210</td><td>9×6</td><td>1000</td><td>3040</td></tr>
+<tr><td>Sticker Chromo</td><td>210</td><td>7×10</td><td>1000</td><td>3920</td></tr>
+<tr><td>Sticker Chromo</td><td>210</td><td>8×10</td><td>1000</td><td>4480</td></tr>
+<tr><td>Sticker Chromo</td><td>210</td><td>8.5×11</td><td>1000</td><td>4800</td></tr>
+<tr><td>Sticker Chromo</td><td>210</td><td>9×12</td><td>1000</td><td>6060</td></tr>
+<tr><td>Sticker Chromo</td><td>210</td><td>9×14</td><td>1000</td><td>7060</td></tr>
+<tr><td>Sticker Chromo</td><td>210</td><td>11×17</td><td>1000</td><td>10480</td></tr>
+<tr><td>Sticker Chromo</td><td>210</td><td>12×18</td><td>1000</td><td>7000</td></tr>
+<tr><td>Sticker Chromo</td><td>210</td><td>3×3</td><td>1000</td><td>700</td></tr>
+<tr><td>Sticker Chromo</td><td>210</td><td>3×2</td><td>1000</td><td>500</td></tr>
+<tr><td>Sticker Chromo</td><td>210</td><td>4×2</td><td>1000</td><td>620</td></tr>
+<tr><td>Sticker Chromo</td><td>210</td><td>3.5×2</td><td>1000</td><td>550</td></tr>
+<tr><td>Sticker Chromo</td><td>210</td><td>2.5×3.5</td><td>1000</td><td>680</td></tr>
+<tr><td>Sticker Chromo</td><td>210</td><td>4×4</td><td>1000</td><td>1220</td></tr>
+<tr><td>Sticker Chromo</td><td>210</td><td>4×2.5</td><td>1000</td><td>760</td></tr>
+<tr><td>Sticker Chromo</td><td>210</td><td>4×3</td><td>1000</td><td>920</td></tr>
+<tr><td>Sticker Chromo</td><td>210</td><td>5×4</td><td>1000</td><td>1520</td></tr>
+<tr><td>Sticker Chromo</td><td>210</td><td>2×2</td><td>1000</td><td>300</td></tr>
+<tr><td>Sticker Chromo</td><td>210</td><td>1×2</td><td>1000</td><td>310</td></tr>
+<tr><td>Sticker Chromo</td><td>210</td><td>5×5</td><td>1000</td><td>1900</td></tr>
+<tr><td>Sticker Chromo</td><td>210</td><td>3×5</td><td>1000</td><td>1140</td></tr>
+<tr><td>Sticker Chromo</td><td>210</td><td>6×3</td><td>1000</td><td>1380</td></tr>
+<tr><td>Sticker Chromo</td><td>210</td><td>6×6</td><td>1000</td><td>2740</td></tr>
+<tr><td>Sticker Chromo</td><td>210</td><td>8.5×5.5</td><td>1000</td><td>2400</td></tr>
+</table>
+</div>
+</section>
+
+<section id="books">
 <h2>My Book</h2>
+
+<div class="book">
 
 <img src="https://via.placeholder.com/200x300?text=Shabari+Book">
 
-<p><b>Shabari : Ayushyacha Pravas</b></p>
-<p>Author – Tushar D. Nakhate</p>
-
-</section>
-
-<section>
-
-<h2>Printing Price List</h2>
-
-<div class="price">
-<h3>Visiting Card</h3>
-<p>₹200 / 100 cards</p>
+<div>
+<h3>शबरी : आयुष्याचा प्रवास</h3>
+<p>लेखक – श्री. तुषार दिलीप नखाते</p>
+<p>प्रेरणादायी जीवनप्रवासावर आधारित कथा.</p>
 </div>
 
-<div class="price">
-<h3>Flex Banner</h3>
-<p>₹25 / sq.ft</p>
-</div>
-
-<div class="price">
-<h3>Pamphlet</h3>
-<p>₹2 per copy</p>
 </div>
 
 </section>
 
-<section>
-
+<section id="contact">
 <h2>Contact</h2>
-
-<p>RN Printing</p>
+<p><b>RN Printing</b></p>
 <p>Virli (Bu.), Tal. Lakhandur, Dist. Bhandara</p>
 <p>📞 7798607130</p>
-
 </section>
 
 <footer>
-
 © RN Printing | Website by Tushar D. Nakhate
-
 </footer>
 
 </body>
